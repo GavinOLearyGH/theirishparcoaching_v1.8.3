@@ -1,1 +1,123 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>The Irish Par Caddy Library V1.8</title><meta name="description" content="Browse the TIP drill and exercise library across Swing, Skill, Stretch, and Strength." /><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css" /></head><body class="bg-slate-950 text-slate-100 antialiased"><div class="page-shell"><header class="hero-wrap"><div class="hero-glow"></div><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10"><div class="flex flex-wrap items-center justify-between gap-4"><div><div class="inline-flex flex-wrap gap-2 mb-5"><span class="tip-chip">The Irish Par Caddy</span><span class="tip-chip">Library</span><span class="tip-chip">V1.8</span></div><h1 class="text-[2.6rem] md:text-[3.3rem] lg:text-[4rem] font-extrabold tracking-tight leading-[0.98] max-w-4xl">The Irish Par Caddy Library</h1><p class="mt-4 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Browse drills and coaching guidance across Swing, Skill, Stretch, and Strength.</p><p class="mt-3 text-sm md:text-[0.95rem] text-slate-400 max-w-3xl leading-relaxed">Use the library to explore, compare options, and build your own session blocks without changing the coaching flow on the main page.</p></div><div class="flex flex-wrap gap-3"><a href="./review.html" class="tip-btn tip-btn-secondary">Back to Coaching</a><a href="./index.html" class="tip-btn tip-btn-secondary">Back to Hub</a></div></div></div></header><main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-7"><section class="glass-card p-4 lg:p-5"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4"><div><div class="section-kicker">Drill Packs</div><h2 class="section-title !mt-1">Start with the problem, not the drill</h2><p class="mt-2 text-sm text-slate-400 max-w-3xl">Use featured packs to jump straight into the parts of the game that usually move scores fastest.</p></div><div class="text-sm text-slate-400">Click a pack to filter the full library instantly.</div></div><div id="drillPacks" class="mt-4 flex flex-wrap gap-3"></div><div class="mt-6 pt-5 border-t border-white/10"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3"><div><div class="section-kicker">TIP Dimensions</div><h3 class="text-xl font-bold mt-1">Or explore by TIP Dimension</h3><p class="mt-2 text-sm text-slate-400 max-w-3xl">Browse the library through the 4 parts of the TIP system: Swing, Skill, Stretch, and Strength.</p></div><div class="text-sm text-slate-400">Click a dimension pack to filter by how you train.</div></div><div id="dimensionPacks" class="mt-4 flex flex-wrap gap-3"></div></div></section><section class="glass-card p-4 lg:p-5"><div class="grid lg:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))] gap-3 items-end"><div><label class="field-label" for="searchInput">Search</label><input id="searchInput" class="tip-input" type="text" placeholder="Rope, wedges, putting, hips..." /></div><div><label class="field-label" for="dimensionFilter">Dimension</label><select id="dimensionFilter" class="tip-input"><option value="">All</option></select></div><div><label class="field-label" for="areaFilter">Area</label><select id="areaFilter" class="tip-input"><option value="">All</option></select></div><div><label class="field-label" for="categoryFilter">Category</label><select id="categoryFilter" class="tip-input"><option value="">All</option></select></div><div><label class="field-label" for="locationFilter">Location</label><select id="locationFilter" class="tip-input"><option value="">All</option></select></div><div><label class="field-label" for="confidenceFilter">Confidence</label><select id="confidenceFilter" class="tip-input"><option value="">All</option></select></div></div><div class="mt-4 flex flex-wrap gap-3"><button id="clearFiltersBtn" class="tip-btn tip-btn-secondary">Clear Filters</button><button id="showFavoritesBtn" class="tip-btn tip-btn-secondary">Favorites Only</button></div></section><section class="grid lg:grid-cols-[1.45fr_.55fr] gap-5"><div class="space-y-4"><div class="flex items-center justify-between"><div><div class="section-kicker">Results</div><h2 class="section-title !mt-1">Library Items</h2></div><div id="resultsCount" class="metric-badge metric-neutral">0 items</div></div><div id="resultsGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div></div><aside class="space-y-4"><div class="glass-card p-4"><div class="section-kicker">Overview</div><h3 class="text-lg font-bold mt-1">Current Library</h3><div id="librarySummary" class="mt-4 grid gap-3"></div></div><div class="glass-card p-4"><div class="section-kicker">Favorites</div><h3 class="text-lg font-bold mt-1">Saved Items</h3><div id="favoritesList" class="mt-4 space-y-2 text-sm text-slate-300"></div></div><div class="glass-card p-4"><div class="section-kicker">Build Your Own</div><h3 class="text-lg font-bold mt-1">Session Tray</h3><p class="text-sm text-slate-400 mt-2">Add items you want to compare or use together in the same session.</p><div id="trayList" class="mt-4 space-y-2 text-sm text-slate-300"></div><div class="mt-4 flex flex-wrap gap-3"><button id="copyTrayBtn" class="tip-btn tip-btn-secondary">Copy Tray</button><button id="clearTrayBtn" class="tip-btn tip-btn-secondary">Clear Tray</button></div></div></aside></section></main></div><script src="./library-data.js"></script><script src="./tip-drill-details.js"></script><script src="./tip-how-ui.js"></script><script src="./library.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Game With Purpose | The Irish Par Caddy V1.9.3</title>
+  <meta name="description" content="Use The Irish Par Caddy drill library to turn patterns into practice across Swing, Skill, Stretch, and Strength." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <div class="page-shell">
+    <header class="hero-wrap">
+      <div class="hero-glow"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a href="./index.html" class="tip-btn tip-btn-secondary">← Back to Caddy</a>
+          <a href="./review.html" class="tip-btn tip-btn-secondary">Review Your Round</a>
+          <a href="./method.html" class="tip-btn tip-btn-secondary">Understand the System</a>
+        </div>
+        <div class="inline-flex flex-wrap gap-2 mb-5">
+          <span class="tip-chip">The Irish Par</span>
+          <span class="tip-chip">Drill Library</span>
+          <span class="tip-chip">Build the Player</span>
+          <span class="tip-chip">V1.9.3</span>
+        </div>
+        <h1 class="text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem] font-extrabold tracking-tight leading-[0.98] max-w-5xl">Build Your Game With Purpose</h1>
+        <p class="mt-5 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Use the drill library to turn patterns into practice.</p>
+        <p class="mt-3 text-sm md:text-base text-slate-400 max-w-3xl leading-relaxed">The library is not just a list of drills. It is where the Caddy’s prescription becomes work you can actually do.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <button id="openLibraryBtn" class="tip-btn tip-btn-primary" type="button">Open Drill Library</button>
+          <a href="./review.html" class="tip-btn tip-btn-secondary">Review Your Round</a>
+          <a href="./index.html" class="tip-btn tip-btn-secondary">Back to Caddy</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-16 space-y-7">
+      <section id="libraryIntro" class="grid lg:grid-cols-[1fr_.9fr] gap-6 items-start">
+        <div class="glass-card p-6 lg:p-7">
+          <div class="section-kicker">Library Flow</div>
+          <h2 class="section-title">What you are about to do</h2>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="legend-item"><div class="legend-code">1</div><div class="font-bold mt-1">Choose the problem</div><p class="text-sm text-slate-400 mt-1">Start with what the round exposed: contact, approach control, short game, putting, mobility, or strength.</p></div>
+            <div class="legend-item"><div class="legend-code">2</div><div class="font-bold mt-1">Filter the work</div><p class="text-sm text-slate-400 mt-1">Use packs, dimensions, area, category, location, and confidence to narrow the library.</p></div>
+            <div class="legend-item"><div class="legend-code">3</div><div class="font-bold mt-1">View How</div><p class="text-sm text-slate-400 mt-1">Open drill details so the player knows exactly what to do.</p></div>
+            <div class="legend-item"><div class="legend-code">4</div><div class="font-bold mt-1">Build a session</div><p class="text-sm text-slate-400 mt-1">Add drills to the session tray and turn them into a practice block.</p></div>
+          </div>
+        </div>
+        <aside class="glass-card p-6 lg:p-7">
+          <div class="section-kicker">How to Think About It</div>
+          <h2 class="section-title">Start with the problem, not the drill.</h2>
+          <p class="section-copy">The library is strongest when it supports a clear pattern. Use it after a round review, or browse by dimension when you already know what you want to train.</p>
+          <div class="mt-6 space-y-3">
+            <div class="plan-summary"><strong>Swing</strong><br><span class="text-slate-400">Mechanics, contact, tempo, face, path, and delivery.</span></div>
+            <div class="plan-summary"><strong>Skill</strong><br><span class="text-slate-400">Putting, wedges, approach control, tee strategy, and scoring.</span></div>
+            <div class="plan-summary"><strong>Stretch + Strength</strong><br><span class="text-slate-400">Mobility, stability, balance, rotation, and body support.</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <div id="libraryWorkflow" class="hidden space-y-7">
+        <section class="glass-card p-4 lg:p-5">
+          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <div><div class="section-kicker">Drill Packs</div><h2 class="section-title !mt-1">Start with the problem, not the drill</h2><p class="mt-2 text-sm text-slate-400 max-w-3xl">Use featured packs to jump straight into the parts of the game that usually move scores fastest.</p></div>
+            <div class="text-sm text-slate-400">Click a pack to filter the full library instantly.</div>
+          </div>
+          <div id="drillPacks" class="mt-4 flex flex-wrap gap-3"></div>
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3"><div><div class="section-kicker">TIP Dimensions</div><h3 class="text-xl font-bold mt-1">Or explore by TIP Dimension</h3><p class="mt-2 text-sm text-slate-400 max-w-3xl">Browse the library through the 4 parts of the TIP system: Swing, Skill, Stretch, and Strength.</p></div><div class="text-sm text-slate-400">Click a dimension pack to filter by how you train.</div></div>
+            <div id="dimensionPacks" class="mt-4 flex flex-wrap gap-3"></div>
+          </div>
+        </section>
+
+        <section class="glass-card p-4 lg:p-5">
+          <div class="grid lg:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))] gap-3 items-end">
+            <div><label class="field-label" for="searchInput">Search</label><input id="searchInput" class="tip-input" type="text" placeholder="Rope, wedges, putting, hips..." /></div>
+            <div><label class="field-label" for="dimensionFilter">Dimension</label><select id="dimensionFilter" class="tip-input"><option value="">All</option></select></div>
+            <div><label class="field-label" for="areaFilter">Area</label><select id="areaFilter" class="tip-input"><option value="">All</option></select></div>
+            <div><label class="field-label" for="categoryFilter">Category</label><select id="categoryFilter" class="tip-input"><option value="">All</option></select></div>
+            <div><label class="field-label" for="locationFilter">Location</label><select id="locationFilter" class="tip-input"><option value="">All</option></select></div>
+            <div><label class="field-label" for="confidenceFilter">Confidence</label><select id="confidenceFilter" class="tip-input"><option value="">All</option></select></div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-3"><button id="clearFiltersBtn" class="tip-btn tip-btn-secondary">Clear Filters</button><button id="showFavoritesBtn" class="tip-btn tip-btn-secondary">Favorites Only</button></div>
+        </section>
+
+        <section class="grid lg:grid-cols-[1.45fr_.55fr] gap-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between"><div><div class="section-kicker">Results</div><h2 class="section-title !mt-1">Library Items</h2></div><div id="resultsCount" class="metric-badge metric-neutral">0 items</div></div>
+            <div id="resultsGrid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+          </div>
+          <aside class="space-y-4">
+            <div class="glass-card p-4"><div class="section-kicker">Overview</div><h3 class="text-lg font-bold mt-1">Current Library</h3><div id="librarySummary" class="mt-4 grid gap-3"></div></div>
+            <div class="glass-card p-4"><div class="section-kicker">Favorites</div><h3 class="text-lg font-bold mt-1">Saved Items</h3><div id="favoritesList" class="mt-4 space-y-2 text-sm text-slate-300"></div></div>
+            <div class="glass-card p-4"><div class="section-kicker">Build Your Own</div><h3 class="text-lg font-bold mt-1">Session Tray</h3><p class="text-sm text-slate-400 mt-2">Add items you want to compare or use together in the same session.</p><div id="trayList" class="mt-4 space-y-2 text-sm text-slate-300"></div><div class="mt-4 flex flex-wrap gap-3"><button id="copyTrayBtn" class="tip-btn tip-btn-secondary">Copy Tray</button><button id="clearTrayBtn" class="tip-btn tip-btn-secondary">Clear Tray</button></div></div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="./library-data.js"></script>
+  <script src="./tip-drill-details.js"></script>
+  <script src="./tip-how-ui.js"></script>
+  <script src="./library.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('openLibraryBtn');
+      const workflow = document.getElementById('libraryWorkflow');
+      const showLibrary = () => {
+        workflow?.classList.remove('hidden');
+        openBtn.textContent = 'Drill Library Open';
+        setTimeout(() => workflow?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      };
+      openBtn?.addEventListener('click', showLibrary);
+      if (window.location.hash === '#library') showLibrary();
+    });
+  </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Irish Par Caddy V1.8</title>
-  <meta name="description" content="Turn a simple scorecard into a full TIP flow — coaching debrief, prescription engine, and session builder — in one GitHub Pages-ready package." />
+  <title>Review Your Round | The Irish Par Caddy V1.8.9</title>
+  <meta name="description" content="Enter your scorecard and turn a real round into a TIP coaching debrief, prescription, and next practice session." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,39 +17,41 @@
     <header class="hero-wrap">
       <div class="hero-glow"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
-        <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-start">
+        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-8 items-start">
           <div>
             <div class="inline-flex flex-wrap gap-2 mb-5">
               <span class="tip-chip">The Irish Par Caddy</span>
-              <span class="tip-chip">Post-Round Coaching</span>
-              <span class="tip-chip">V1.8</span>
+              <span class="tip-chip">Review Your Round</span>
+              <span class="tip-chip">Build the Player</span>
+              <span class="tip-chip">V1.8.9</span>
             </div>
-            <h1 id="heroTitle" class="text-[2.85rem] md:text-[3.6rem] lg:text-[4.35rem] font-extrabold tracking-tight leading-[0.98] max-w-4xl">The Irish Par Caddy V1.8</h1>
-            <p id="heroSubtitle" class="mt-4 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Review a round, see what really mattered, and move straight into coaching, prescriptions, and next sessions.</p>
-            <p id="heroTagline" class="mt-3 text-sm md:text-[0.95rem] text-slate-400 max-w-3xl leading-relaxed">Use the Caddy to review a round, get coaching, and then explore the library when you want to go deeper.</p>
+            <h1 id="heroTitle" class="text-[2.85rem] md:text-[3.6rem] lg:text-[4.35rem] font-extrabold tracking-tight leading-[0.98] max-w-4xl">Review Your Round</h1>
+            <p id="heroSubtitle" class="mt-4 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Enter your scorecard quickly. The Caddy will read the round, surface what mattered, and turn it into a practical next block of work.</p>
+            <p id="heroTagline" class="mt-3 text-sm md:text-[0.95rem] text-slate-400 max-w-3xl leading-relaxed">This page is for your own rounds. If you only want to see how the flow works, use Start Here from the Caddy hub.</p>
             <div class="mt-7 flex flex-wrap gap-3">
-              <button id="loadDemoBtn" class="tip-btn tip-btn-primary">Load Demo Round</button>
+              <button id="loadDemoBtn" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Load Demo Round</button>
+              <a href="#scorecardEntrySection" class="tip-btn tip-btn-primary">Start Round Entry</a>
               <button id="analyzeBtnTop" class="tip-btn tip-btn-secondary">Get Coaching</button>
               <button id="clearBtnTop" class="tip-btn tip-btn-secondary">Clear</button>
               <a href="./library.html" class="tip-btn tip-btn-secondary">Open Library</a>
-              <a href="./index.html" class="tip-btn tip-btn-secondary">Back to Hub</a>
+              <a href="./index.html" class="tip-btn tip-btn-secondary">Back to Caddy</a>
             </div>
-            <div id="coachingHint" class="mt-3 text-sm text-amber-300">Load a demo round or enter your scorecard first.</div>
+            <div id="coachingHint" class="mt-3 text-sm text-amber-300">Enter your scorecard first, then select Get Coaching.</div>
             <div class="grid sm:grid-cols-3 gap-4 mt-7">
               <div class="glass-card p-4">
                 <div class="text-xs uppercase tracking-[0.22em] text-slate-400">What you do</div>
                 <div class="text-base font-semibold mt-2">Enter the round fast.</div>
-                <div class="text-sm text-slate-400 mt-1">Use the same fast shorthand input. TIP reads the pattern without turning the process into homework.</div>
+                <div class="text-sm text-slate-400 mt-1">Use the shorthand input. The goal is enough clean signal, not homework.</div>
               </div>
               <div class="glass-card p-4">
                 <div class="text-xs uppercase tracking-[0.22em] text-slate-400">What TIP shows you</div>
                 <div class="text-base font-semibold mt-2">A real coaching debrief.</div>
-                <div class="text-sm text-slate-400 mt-1">See what mattered, where the round leaned, and what actually drove the card.</div>
+                <div class="text-sm text-slate-400 mt-1">See what held up, what cost shots, and where the round leaned.</div>
               </div>
               <div class="glass-card p-4">
                 <div class="text-xs uppercase tracking-[0.22em] text-slate-400">What changes next</div>
                 <div class="text-base font-semibold mt-2">From insight to action.</div>
-                <div class="text-sm text-slate-400 mt-1">Move from coaching to prescription to session builder without leaving the page.</div>
+                <div class="text-sm text-slate-400 mt-1">Move from debrief to prescription to a usable practice session.</div>
               </div>
             </div>
           </div>
@@ -65,7 +67,7 @@
               </div>
             </div>
             <img src="./springhaven_scorecard.png" alt="Springhaven scorecard" class="rounded-xl border border-white/10 w-full object-cover shadow-2xl" />
-            <p class="mt-4 text-sm text-slate-400">Use Springhaven for a ready-to-go round, or switch to Custom for any other course.</p>
+            <p class="mt-4 text-sm text-slate-400">Use Springhaven for a ready-to-go template, or switch to Custom for any other course.</p>
           </aside>
         </div>
       </div>
@@ -76,7 +78,7 @@
         <div class="round-setup-shell">
           <div class="round-setup-intro">
             <div class="section-kicker">Round Setup</div>
-            <h2 class="section-title">Enter a Round in 2 Minutes</h2>
+            <h2 class="section-title">Enter Your Round in 2 Minutes</h2>
             <p class="section-copy">Set the round, add any context that matters today, then move straight into the scorecard. TIP will use it to build the debrief, spot the pattern, and point you to the next block of work.</p>
             <div class="setup-flow-chips">
               <span class="setup-flow-chip">1. Set the round</span>
@@ -252,7 +254,7 @@
           </div>
           <div class="flex flex-wrap gap-3 mt-5" id="scorecardActionRow">
             <button id="analyzeBtn" class="tip-btn tip-btn-primary">Get Coaching</button>
-            <button id="loadDemoBtn2" class="tip-btn tip-btn-secondary">Load Demo Round</button>
+            <button id="loadDemoBtn2" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Load Demo Round</button>
             <button id="clearBtn" class="tip-btn tip-btn-secondary">Clear Round</button>
             <button id="saveRoundBtn" class="tip-btn tip-btn-secondary">Save Round to History</button>
             <button id="saveCourseBtn" class="tip-btn tip-btn-secondary">Save as New Course</button>

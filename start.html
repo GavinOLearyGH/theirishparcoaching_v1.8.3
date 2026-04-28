@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start Here | The Irish Par Caddy V1.8.8</title>
+  <title>Start Here | The Irish Par Caddy V1.9.5</title>
   <meta name="description" content="Start here with The Irish Par Caddy. Launch a no-entry demo and see the full Caddy output on the same page." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,12 @@
     <header class="hero-wrap">
       <div class="hero-glow"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
-        <div class="flex flex-wrap gap-3 mb-6">
-          <a href="./index.html" class="tip-btn tip-btn-secondary">← Back to Caddy</a>
-          <a href="./review.html" class="tip-btn tip-btn-secondary">Review Your Round</a>
-          <a href="./library.html" class="tip-btn tip-btn-secondary">Drill Library</a>
-        </div>
-        <div class="inline-flex flex-wrap gap-2 mb-5">
-          <span class="tip-chip">Start Here</span>
-          <span class="tip-chip">Demo Round</span>
-          <span class="tip-chip">No Entry Required</span>
-          <span class="tip-chip">V1.8.8</span>
-        </div>
         <h1 class="text-[2.7rem] md:text-[3.7rem] lg:text-[4.4rem] font-extrabold tracking-tight leading-[0.98] max-w-5xl">See how the Caddy works.</h1>
         <p class="mt-5 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Launch a sample round and watch the full Caddy flow appear below — scoreboard, one thing, debrief, patterns, approach windows, prescription, and session builder.</p>
         <div class="mt-7 flex flex-wrap gap-3">
           <button id="launchDemoBtn" class="tip-btn tip-btn-primary">Launch Demo Round</button>
           <a href="./review.html" class="tip-btn tip-btn-secondary">Enter My Own Round</a>
+          <a href="./index.html" class="tip-btn tip-btn-secondary">Back to Caddy</a>
         </div>
         <p class="mt-4 text-sm text-slate-400">This page is a product walkthrough. No scorecard entry is required.</p>
       </div>
@@ -70,127 +60,25 @@
 
       <section id="demoOutput" class="hidden space-y-7">
         <section id="roundSummarySection" class="glass-card p-4 lg:p-5">
-          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
-            <div>
-              <div class="section-kicker">Round Summary</div>
-              <h2 class="section-title">Scoreboard</h2>
-              <p class="section-copy">Demo round: Springhaven Club · 78 · +8 to par</p>
-            </div>
-            <span class="metric-badge metric-neutral">Demo Output</span>
-          </div>
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3"><div><div class="section-kicker">Round Summary</div><h2 class="section-title">Scoreboard</h2><p class="section-copy">Demo round: Springhaven Club · 78 · +8 to par</p></div><span class="metric-badge metric-neutral">Demo Output</span></div>
           <div class="grid sm:grid-cols-2 xl:grid-cols-6 gap-4 mt-5">
-            <div class="summary-card"><div class="summary-label">Score</div><div class="summary-value">78</div><div class="summary-note">+8 to par</div></div>
-            <div class="summary-card"><div class="summary-label">FW %</div><div class="summary-value">62%</div><div class="summary-note">8/13 fairways</div></div>
-            <div class="summary-card"><div class="summary-label">GIR %</div><div class="summary-value">56%</div><div class="summary-note">10/18 greens</div></div>
-            <div class="summary-card"><div class="summary-label">Putts</div><div class="summary-value">36</div><div class="summary-note">0 three-putts</div></div>
-            <div class="summary-card"><div class="summary-label">U/D %</div><div class="summary-value">0%</div><div class="summary-note">0/8 conversions</div></div>
-            <div class="summary-card"><div class="summary-label">Penalties</div><div class="summary-value">0</div><div class="summary-note">0 doubles+</div></div>
+            <div class="summary-card"><div class="summary-label">Score</div><div class="summary-value">78</div><div class="summary-note">+8 to par</div></div><div class="summary-card"><div class="summary-label">FW %</div><div class="summary-value">62%</div><div class="summary-note">8/13 fairways</div></div><div class="summary-card"><div class="summary-label">GIR %</div><div class="summary-value">56%</div><div class="summary-note">10/18 greens</div></div><div class="summary-card"><div class="summary-label">Putts</div><div class="summary-value">36</div><div class="summary-note">0 three-putts</div></div><div class="summary-card"><div class="summary-label">U/D %</div><div class="summary-value">0%</div><div class="summary-note">0/8 conversions</div></div><div class="summary-card"><div class="summary-label">Penalties</div><div class="summary-value">0</div><div class="summary-note">0 doubles+</div></div>
           </div>
         </section>
-
         <section class="grid xl:grid-cols-[1.05fr_.95fr] gap-6 lg:gap-8 items-start">
-          <div class="glass-card p-5 lg:p-6">
-            <div class="section-kicker">TIP Debrief</div>
-            <h2 class="section-title">What mattered most</h2>
-            <div class="one-thing-card mt-4">
-              <div class="text-xs uppercase tracking-[0.2em] text-slate-400">The One Thing</div>
-              <div class="mt-2 text-lg md:text-xl font-bold text-white">Tighten the 150–199 yard window.</div>
-              <div class="mt-2 text-sm text-slate-400">This is the clearest place where neutral holes stayed stressful.</div>
-            </div>
-            <div class="mt-5 space-y-5">
-              <div>
-                <div class="text-xs uppercase tracking-[0.2em] text-slate-400">Round Profile</div>
-                <div class="text-2xl font-bold mt-2">Approach Window Leak</div>
-              </div>
-              <div class="grid md:grid-cols-3 gap-4">
-                <div class="debrief-card"><div class="debrief-title">What traveled</div><p class="debrief-copy">You still kept enough of the card stable to give yourself a chance. No penalty shots kept the card calmer.</p></div>
-                <div class="debrief-card"><div class="debrief-title">What cost shots</div><p class="debrief-copy">From 150–199 yards, too many approaches missed the green and left the short game too much work.</p></div>
-                <div class="debrief-card"><div class="debrief-title">What to train next</div><p class="debrief-copy">Start with center-strike and start-line control in the mid-iron window before touching anything bigger.</p></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass-card p-5 lg:p-6">
-            <div class="section-kicker">Pattern Panels</div>
-            <h2 class="section-title">Where the round leaned</h2>
-            <div class="grid sm:grid-cols-2 gap-4 mt-5">
-              <div class="pattern-card"><div class="flex justify-between gap-3"><h4>Tee Pattern</h4><span class="metric-badge metric-good">Strong</span></div><p class="debrief-copy mt-3">8/13 fairways<br>Left misses: 2<br>Right misses: 3<br>Pattern: playable but slightly two-way</p></div>
-              <div class="pattern-card"><div class="flex justify-between gap-3"><h4>Approach Pattern</h4><span class="metric-badge metric-good">Strong</span></div><p class="debrief-copy mt-3">10/18 greens<br>Left / Right: 4 / 1<br>Short / Long: 2 / 1<br>Avg approach: 138 yds</p></div>
-              <div class="pattern-card"><div class="flex justify-between gap-3"><h4>Scoring Zone</h4><span class="metric-badge metric-bad">Leak</span></div><p class="debrief-copy mt-3">U/D: 0/8<br>Sand saves: 0/0<br>Theme: monitor the easiest chances</p></div>
-              <div class="pattern-card"><div class="flex justify-between gap-3"><h4>Damage Control</h4><span class="metric-badge metric-good">Protected</span></div><p class="debrief-copy mt-3">Penalties: 0<br>Three-putts: 0<br>Doubles+: 0<br>Front / Back: 39 / 39</p></div>
-            </div>
-          </div>
+          <div class="glass-card p-5 lg:p-6"><div class="section-kicker">TIP Debrief</div><h2 class="section-title">What mattered most</h2><div class="one-thing-card mt-4"><div class="text-xs uppercase tracking-[0.2em] text-slate-400">The One Thing</div><div class="mt-2 text-lg md:text-xl font-bold text-white">Tighten the 150–199 yard window.</div><div class="mt-2 text-sm text-slate-400">This is the clearest place where neutral holes stayed stressful.</div></div><div class="mt-5 space-y-5"><div><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Round Profile</div><div class="text-2xl font-bold mt-2">Approach Window Leak</div></div><div class="grid md:grid-cols-3 gap-4"><div class="debrief-card"><div class="debrief-title">What traveled</div><p class="debrief-copy">You still kept enough of the card stable to give yourself a chance. No penalty shots kept the card calmer.</p></div><div class="debrief-card"><div class="debrief-title">What cost shots</div><p class="debrief-copy">From 150–199 yards, too many approaches missed the green and left the short game too much work.</p></div><div class="debrief-card"><div class="debrief-title">What to train next</div><p class="debrief-copy">Start with center-strike and start-line control in the mid-iron window before touching anything bigger.</p></div></div></div></div>
+          <div class="glass-card p-5 lg:p-6"><div class="section-kicker">Pattern Panels</div><h2 class="section-title">Where the round leaned</h2><div class="grid sm:grid-cols-2 gap-4 mt-5"><div class="pattern-card"><div class="flex justify-between gap-3"><h4>Tee Pattern</h4><span class="metric-badge metric-good">Strong</span></div><p class="debrief-copy mt-3">8/13 fairways<br>Left misses: 2<br>Right misses: 3<br>Pattern: playable but slightly two-way</p></div><div class="pattern-card"><div class="flex justify-between gap-3"><h4>Approach Pattern</h4><span class="metric-badge metric-good">Strong</span></div><p class="debrief-copy mt-3">10/18 greens<br>Left / Right: 4 / 1<br>Short / Long: 2 / 1<br>Avg approach: 138 yds</p></div><div class="pattern-card"><div class="flex justify-between gap-3"><h4>Scoring Zone</h4><span class="metric-badge metric-bad">Leak</span></div><p class="debrief-copy mt-3">U/D: 0/8<br>Sand saves: 0/0<br>Theme: monitor the easiest chances</p></div><div class="pattern-card"><div class="flex justify-between gap-3"><h4>Damage Control</h4><span class="metric-badge metric-good">Protected</span></div><p class="debrief-copy mt-3">Penalties: 0<br>Three-putts: 0<br>Doubles+: 0<br>Front / Back: 39 / 39</p></div></div></div>
         </section>
-
-        <section class="glass-card p-4 lg:p-5">
-          <div class="section-kicker">Approach Windows</div>
-          <h2 class="section-title">Distance bucket performance</h2>
-          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-5">
-            <div class="bucket-card"><div class="flex justify-between"><h4>0–99</h4><span class="metric-badge metric-good">100%</span></div><p class="summary-note mt-3">Attempts: 1<br>Green hits: 1<br>Use as maintenance.</p></div>
-            <div class="bucket-card"><div class="flex justify-between"><h4>100–149</h4><span class="metric-badge metric-good">58%</span></div><p class="summary-note mt-3">Attempts: 12<br>Green hits: 7<br>Good enough to support scoring.</p></div>
-            <div class="bucket-card"><div class="flex justify-between"><h4>150–199</h4><span class="metric-badge metric-warn">40%</span></div><p class="summary-note mt-3">Attempts: 5<br>Green hits: 2<br>The main training window.</p></div>
-            <div class="bucket-card"><div class="flex justify-between"><h4>200+</h4><span class="metric-badge metric-bad">0%</span></div><p class="summary-note mt-3">Attempts: 0<br>Green hits: 0<br>No meaningful sample.</p></div>
-          </div>
-        </section>
-
-        <section class="glass-card p-4 lg:p-5">
-          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <div>
-              <div class="section-kicker">TIP Prescription Engine</div>
-              <h2 class="section-title">What to work on next</h2>
-              <p class="section-copy">A focused 4-dimension prescription built from the clearest pattern in the round.</p>
-            </div>
-            <div class="inline-flex flex-wrap gap-2"><span class="tip-chip">Swing</span><span class="tip-chip">Skill</span><span class="tip-chip">Stretch</span><span class="tip-chip">Strength</span></div>
-          </div>
-          <div class="focus-banner mt-5">
-            <div class="focus-banner-head">
-              <div>
-                <div class="focus-kicker">This week’s focus</div>
-                <div class="focus-title">Tighten the mid-iron window.</div>
-                <div class="focus-support">The round stayed organized, but the 150–199 window made too many neutral holes stressful.</div>
-              </div>
-              <div class="focus-chip-row"><span class="engine-chip">Primary fix</span><span class="engine-chip">Approach control</span><span class="engine-chip">Standard load</span></div>
-            </div>
-          </div>
-          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-5">
-            <div class="prescription-card"><div class="prescription-card-title">Swing</div><h4>Smooth 7i Tempo</h4><p class="prescription-copy">Calm rhythm and strike before changing mechanics.</p><p class="prescription-how">10 minutes · controlled 7-iron reps to one target.</p></div>
-            <div class="prescription-card"><div class="prescription-card-title">Skill</div><h4>Mid-Iron Window</h4><p class="prescription-copy">Train center-green execution from 150–199.</p><p class="prescription-how">15 minutes · random targets, green-zone scoring.</p></div>
-            <div class="prescription-card"><div class="prescription-card-title">Stretch</div><h4>Thoracic Openers</h4><p class="prescription-copy">Free rotation so the approach swing does not narrow late.</p><p class="prescription-how">4 minutes · cat-cow plus open books.</p></div>
-            <div class="prescription-card"><div class="prescription-card-title">Strength</div><h4>Anti-Rotation Holds</h4><p class="prescription-copy">Support posture and face control under approach pressure.</p><p class="prescription-how">6 minutes · Pallof holds or band presses.</p></div>
-          </div>
-        </section>
-
-        <section class="glass-card p-4 lg:p-5">
-          <div class="section-kicker">TIP Session Builder</div>
-          <h2 class="section-title">This is what you do next</h2>
-          <p class="section-copy">Demo session generated from the prescription. Export/save actions are reserved for real rounds or member mode.</p>
-          <div class="today-session-card mt-5">
-            <div class="session-day-head"><div><div class="session-mini-label">Today’s Session</div><div class="session-day-title mt-1">Standard · 40 minutes</div><p class="session-intent">Build a calmer mid-iron window without overloading the player.</p></div><span class="session-mode-badge">Demo</span></div>
-            <div class="grid md:grid-cols-3 gap-4 mt-5">
-              <div class="session-mini"><div class="session-mini-label">Block 1</div><div class="session-mini-title">Mobility Reset</div><p class="session-mini-copy">Cat-cow, thoracic openers, shoulder scaption.</p></div>
-              <div class="session-mini"><div class="session-mini-label">Block 2</div><div class="session-mini-title">Mid-Iron Window</div><p class="session-mini-copy">Random 150–199 targets. Score green-zone hits, not flags.</p></div>
-              <div class="session-mini"><div class="session-mini-label">Block 3</div><div class="session-mini-title">Pressure Finish</div><p class="session-mini-copy">Three final reps with full routine and one clear start line.</p></div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3 mt-5">
-            <button class="tip-btn tip-btn-secondary" disabled>Copy Debrief · Demo</button>
-            <button class="tip-btn tip-btn-secondary" disabled>Export to Calendar · Demo</button>
-            <a href="./review.html" class="tip-btn tip-btn-primary">Enter My Own Round</a>
-          </div>
-        </section>
+        <section class="glass-card p-4 lg:p-5"><div class="section-kicker">Approach Windows</div><h2 class="section-title">Distance bucket performance</h2><div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-5"><div class="bucket-card"><div class="flex justify-between"><h4>0–99</h4><span class="metric-badge metric-good">100%</span></div><p class="summary-note mt-3">Attempts: 1<br>Green hits: 1<br>Use as maintenance.</p></div><div class="bucket-card"><div class="flex justify-between"><h4>100–149</h4><span class="metric-badge metric-good">58%</span></div><p class="summary-note mt-3">Attempts: 12<br>Green hits: 7<br>Good enough to support scoring.</p></div><div class="bucket-card"><div class="flex justify-between"><h4>150–199</h4><span class="metric-badge metric-warn">40%</span></div><p class="summary-note mt-3">Attempts: 5<br>Green hits: 2<br>The main training window.</p></div><div class="bucket-card"><div class="flex justify-between"><h4>200+</h4><span class="metric-badge metric-bad">0%</span></div><p class="summary-note mt-3">Attempts: 0<br>Green hits: 0<br>No meaningful sample.</p></div></div></section>
+        <section class="glass-card p-4 lg:p-5"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4"><div><div class="section-kicker">TIP Prescription Engine</div><h2 class="section-title">What to work on next</h2><p class="section-copy">A focused 4-dimension prescription built from the clearest pattern in the round.</p></div><div class="inline-flex flex-wrap gap-2"><span class="tip-chip">Swing</span><span class="tip-chip">Skill</span><span class="tip-chip">Stretch</span><span class="tip-chip">Strength</span></div></div><div class="focus-banner mt-5"><div class="focus-banner-head"><div><div class="focus-kicker">This week’s focus</div><div class="focus-title">Tighten the mid-iron window.</div><div class="focus-support">The round stayed organized, but the 150–199 window made too many neutral holes stressful.</div></div><div class="focus-chip-row"><span class="engine-chip">Primary fix</span><span class="engine-chip">Approach control</span><span class="engine-chip">Standard load</span></div></div></div><div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-5"><div class="prescription-card"><div class="prescription-card-title">Swing</div><h4>Smooth 7i Tempo</h4><p class="prescription-copy">Calm rhythm and strike before changing mechanics.</p><p class="prescription-how">10 minutes · controlled 7-iron reps to one target.</p></div><div class="prescription-card"><div class="prescription-card-title">Skill</div><h4>Mid-Iron Window</h4><p class="prescription-copy">Train center-green execution from 150–199.</p><p class="prescription-how">15 minutes · random targets, green-zone scoring.</p></div><div class="prescription-card"><div class="prescription-card-title">Stretch</div><h4>Thoracic Openers</h4><p class="prescription-copy">Free rotation so the approach swing does not narrow late.</p><p class="prescription-how">4 minutes · cat-cow plus open books.</p></div><div class="prescription-card"><div class="prescription-card-title">Strength</div><h4>Anti-Rotation Holds</h4><p class="prescription-copy">Support posture and face control under approach pressure.</p><p class="prescription-how">6 minutes · Pallof holds or band presses.</p></div></div></section>
+        <section class="glass-card p-4 lg:p-5"><div class="section-kicker">TIP Session Builder</div><h2 class="section-title">This is what you do next</h2><p class="section-copy">Demo session generated from the prescription. Export/save actions are reserved for real rounds or member mode.</p><div class="today-session-card mt-5"><div class="session-day-head"><div><div class="session-mini-label">Today’s Session</div><div class="session-day-title mt-1">Standard · 40 minutes</div><p class="session-intent">Build a calmer mid-iron window without overloading the player.</p></div><span class="session-mode-badge">Demo</span></div><div class="grid md:grid-cols-3 gap-4 mt-5"><div class="session-mini"><div class="session-mini-label">Block 1</div><div class="session-mini-title">Mobility Reset</div><p class="session-mini-copy">Cat-cow, thoracic openers, shoulder scaption.</p></div><div class="session-mini"><div class="session-mini-label">Block 2</div><div class="session-mini-title">Mid-Iron Window</div><p class="session-mini-copy">Random 150–199 targets. Score green-zone hits, not flags.</p></div><div class="session-mini"><div class="session-mini-label">Block 3</div><div class="session-mini-title">Pressure Finish</div><p class="session-mini-copy">Three final reps with full routine and one clear start line.</p></div></div></div><div class="flex flex-wrap gap-3 mt-5"><button class="tip-btn tip-btn-secondary" disabled>Copy Debrief · Demo</button><button class="tip-btn tip-btn-secondary" disabled>Export to Calendar · Demo</button><a href="./review.html" class="tip-btn tip-btn-primary">Enter My Own Round</a></div></section>
       </section>
     </main>
   </div>
-
   <script>
     const btn = document.getElementById('launchDemoBtn');
     const output = document.getElementById('demoOutput');
-    btn.addEventListener('click', () => {
-      output.classList.remove('hidden');
-      btn.textContent = 'Demo Round Loaded';
-      btn.disabled = true;
-      setTimeout(() => document.getElementById('roundSummarySection').scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
-    });
+    btn.addEventListener('click', () => { output.classList.remove('hidden'); btn.textContent = 'Demo Round Loaded'; btn.disabled = true; setTimeout(() => document.getElementById('roundSummarySection').scrollIntoView({ behavior: 'smooth', block: 'start' }), 120); });
   </script>
 </body>
 </html>

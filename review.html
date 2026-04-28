@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Review Your Round | The Irish Par Caddy V1.9.2</title>
+  <title>Review Your Round | The Irish Par Caddy V1.9.5</title>
   <meta name="description" content="Enter your scorecard and turn a real round into a TIP coaching debrief, prescription, and next practice session." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -17,26 +17,15 @@
     <header class="hero-wrap">
       <div class="hero-glow"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
-        <div class="flex flex-wrap gap-3 mb-6">
-          <a href="./index.html" class="tip-btn tip-btn-secondary">← Back to Caddy</a>
-          <a href="./start.html" class="tip-btn tip-btn-secondary">See It Work</a>
-          <a href="./library.html" class="tip-btn tip-btn-secondary">Drill Library</a>
-        </div>
-        <div class="inline-flex flex-wrap gap-2 mb-5">
-          <span class="tip-chip">The Irish Par</span>
-          <span class="tip-chip">Review Your Round</span>
-          <span class="tip-chip">Build the Player</span>
-          <span class="tip-chip">V1.9.2</span>
-        </div>
         <h1 id="heroTitle" class="text-[2.85rem] md:text-[3.7rem] lg:text-[4.5rem] font-extrabold tracking-tight leading-[0.98] max-w-5xl">Review Your Round</h1>
         <p id="heroSubtitle" class="mt-5 text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed">Turn your scorecard into coaching.</p>
         <p id="heroTagline" class="mt-3 text-sm md:text-base text-slate-400 max-w-3xl leading-relaxed">Enter your round quickly. The Caddy will read the card, surface what mattered, and turn it into your next useful block of work.</p>
         <div class="mt-7 flex flex-wrap gap-3">
           <button id="loadDemoBtn" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Load Demo Round</button>
           <button id="startEntryBtn" class="tip-btn tip-btn-primary" type="button">Start Round Entry</button>
-          <a href="./start.html" class="tip-btn tip-btn-secondary">See Demo Flow</a>
-          <button id="analyzeBtnTop" class="tip-btn tip-btn-secondary">Get Coaching</button>
-          <button id="clearBtnTop" class="tip-btn tip-btn-secondary">Clear</button>
+          <a href="./index.html" class="tip-btn tip-btn-secondary">Back to Caddy</a>
+          <button id="analyzeBtnTop" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Get Coaching</button>
+          <button id="clearBtnTop" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Clear</button>
         </div>
         <div id="coachingHint" class="mt-3 text-sm text-amber-300">Start round entry, complete your card, then select Get Coaching.</div>
       </div>
@@ -58,16 +47,12 @@
           <div class="section-kicker">Before You Start</div>
           <h2 class="section-title">Keep it quick. Patterns beat perfection.</h2>
           <p class="section-copy">The goal is not to write a novel about the round. Enter enough clean signal for the Caddy to identify the pattern and prescribe the next useful action.</p>
-          <div class="mt-6 space-y-3">
-            <div class="plan-summary"><strong>Simple shorthand</strong><br><span class="text-slate-400">Fast input creates enough signal.</span></div>
-            <div class="plan-summary"><strong>One useful focus</strong><br><span class="text-slate-400">The output points to what matters most.</span></div>
-            <div class="plan-summary"><strong>Next session ready</strong><br><span class="text-slate-400">The plan turns into practice.</span></div>
-          </div>
+          <div class="mt-6 space-y-3"><div class="plan-summary"><strong>Simple shorthand</strong><br><span class="text-slate-400">Fast input creates enough signal.</span></div><div class="plan-summary"><strong>One useful focus</strong><br><span class="text-slate-400">The output points to what matters most.</span></div><div class="plan-summary"><strong>Next session ready</strong><br><span class="text-slate-400">The plan turns into practice.</span></div></div>
         </aside>
       </section>
 
       <div id="reviewWorkflow" class="hidden space-y-7">
-        <section class="grid xl:grid-cols-[0.8fr_1.2fr] gap-5">
+        <section id="howToEnterSection" class="grid xl:grid-cols-[0.8fr_1.2fr] gap-5">
           <div class="glass-card p-4 lg:p-5">
             <div class="section-kicker">How to Enter</div>
             <h3 class="text-lg font-bold">Scorecard shorthand</h3>
@@ -80,36 +65,11 @@
             <div class="shorthand-example mt-4"><div class="shorthand-example-label">Example hole (Par 4)</div><div class="shorthand-example-code mono">R / L125 / 2 / N / N</div><div class="shorthand-copy">Right tee shot • Missed green left from 125 • 2 putts</div></div>
             <div class="mt-4 pt-4 border-t border-white/10 text-sm text-emerald-300/90 font-medium">Clean input → better patterns</div>
           </div>
-          <div class="glass-card p-4 lg:p-5">
-            <div class="section-kicker">What You Get</div>
-            <h3 class="text-lg font-bold">What TIP pulls from your round</h3>
-            <div class="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
-              <div class="insight-item"><div class="font-semibold text-slate-100">Where strokes are leaking</div><div class="text-slate-400">Penalties, three-putts, and dispersion patterns.</div></div>
-              <div class="insight-item"><div class="font-semibold text-slate-100">Your miss pattern</div><div class="text-slate-400">One-way miss, two-way miss, or distance-control issue.</div></div>
-              <div class="insight-item"><div class="font-semibold text-slate-100">What held up</div><div class="text-slate-400">The part of the game you can keep trusting.</div></div>
-              <div class="insight-item"><div class="font-semibold text-slate-100">The next practice block</div><div class="text-slate-400">A focused 4D prescription.</div></div>
-            </div>
-          </div>
+          <div class="glass-card p-4 lg:p-5"><div class="section-kicker">What You Get</div><h3 class="text-lg font-bold">What TIP pulls from your round</h3><div class="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-300"><div class="insight-item"><div class="font-semibold text-slate-100">Where strokes are leaking</div><div class="text-slate-400">Penalties, three-putts, and dispersion patterns.</div></div><div class="insight-item"><div class="font-semibold text-slate-100">Your miss pattern</div><div class="text-slate-400">One-way miss, two-way miss, or distance-control issue.</div></div><div class="insight-item"><div class="font-semibold text-slate-100">What held up</div><div class="text-slate-400">The part of the game you can keep trusting.</div></div><div class="insight-item"><div class="font-semibold text-slate-100">The next practice block</div><div class="text-slate-400">A focused 4D prescription.</div></div></div></div>
         </section>
 
-        <section class="glass-card round-setup-card p-4 lg:p-5">
-          <div class="round-setup-shell">
-            <div class="round-setup-intro"><div class="section-kicker">Round Setup</div><h2 class="section-title">Enter Your Round in 2 Minutes</h2><p class="section-copy">Set the round, add any context that matters today, then move straight into the scorecard.</p><div class="setup-flow-chips"><span class="setup-flow-chip">1. Set the round</span><span class="setup-flow-chip">2. Add context</span><span class="setup-flow-chip">3. Enter the card</span></div></div>
-            <div class="round-setup-steps">
-              <div class="setup-step-card"><div class="setup-step-head"><div><div class="section-kicker">Step 1</div><h3 class="setup-step-title">Set the round</h3></div><p class="setup-step-copy">Choose the course and essentials.</p></div><div class="setup-fields-grid setup-fields-grid-primary"><div><label class="field-label" for="courseMode">Course mode</label><select id="courseMode" class="tip-input"><option value="springhaven">Springhaven</option><option value="custom">Custom course</option><option value="saved">Saved course</option></select></div><div><label class="field-label" for="courseName">Course</label><input id="courseName" class="tip-input" type="text" value="Springhaven Club" /></div><div><label class="field-label" for="teeSelect">Tee</label><select id="teeSelect" class="tip-input"></select></div><div><label class="field-label" for="savedCourseSelect">Saved course</label><select id="savedCourseSelect" class="tip-input" disabled><option value="">Select saved</option></select></div><div><label class="field-label" for="roundDate">Date</label><input id="roundDate" class="tip-input" type="date" /></div></div></div>
-              <div class="setup-step-card setup-step-card-secondary"><div class="setup-step-head"><div><div class="section-kicker">Step 2</div><h3 class="setup-step-title">Add context</h3></div><p class="setup-step-copy">Optional, but useful.</p></div><div class="setup-fields-grid setup-fields-grid-secondary"><div><label class="field-label" for="focusOfDay">Focus</label><input id="focusOfDay" class="tip-input" type="text" placeholder="Tempo, center green, fairways..." /></div><div><label class="field-label" for="roundNotes">Round note</label><input id="roundNotes" class="tip-input" type="text" placeholder="Windy, tight back nine, driver off..." /></div></div></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="scorecardEntrySection" class="glass-card p-4 lg:p-5 overflow-hidden w-full">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5"><div><div class="section-kicker">18-Hole Input</div><h2 class="section-title">Scorecard shorthand</h2></div><div class="text-xs text-slate-400">Use <span class="text-slate-200 font-semibold">Y134</span>, <span class="text-slate-200 font-semibold">L125</span>, <span class="text-slate-200 font-semibold">LO155</span>, etc.</div></div>
-          <div class="entry-mode-panel md:hidden mb-4"><div class="section-kicker">Entry Mode</div><div class="entry-mode-toggle" id="entryModeBar"><button type="button" id="entryModeCardsBtn" class="entry-mode-btn active">Cards</button><button type="button" id="entryModeTableBtn" class="entry-mode-btn">Table</button></div><p class="entry-mode-copy">Cards are quickest on phone. Switch to Table for a full-card grid view.</p></div>
-          <div id="mobileEntryMount" class="mobile-entry-shell"></div>
-          <div id="scoreTableShell" class="overflow-x-auto rounded-2xl border border-white/10 table-scroll-shell table-scroll-mobile mt-4 md:mt-0"><table class="min-w-[1180px] w-full text-[13px] score-table"><thead><tr><th>Hole</th><th>Par</th><th>Yds</th><th>Score</th><th>Fairway</th><th>Green</th><th>Putts</th><th>U/D</th><th>S/S</th><th>Pen</th><th>Quick note</th></tr></thead><tbody id="roundTableBody"></tbody></table></div>
-          <div class="flex flex-wrap gap-3 mt-5" id="scorecardActionRow"><button id="analyzeBtn" class="tip-btn tip-btn-primary">Get Coaching</button><button id="loadDemoBtn2" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Load Demo Round</button><button id="clearBtn" class="tip-btn tip-btn-secondary">Clear Round</button><button id="saveRoundBtn" class="tip-btn tip-btn-secondary">Save Round to History</button><button id="saveCourseBtn" class="tip-btn tip-btn-secondary">Save as New Course</button></div>
-        </section>
-
+        <section class="glass-card round-setup-card p-4 lg:p-5"><div class="round-setup-shell"><div class="round-setup-intro"><div class="section-kicker">Round Setup</div><h2 class="section-title">Enter Your Round in 2 Minutes</h2><p class="section-copy">Set the round, add any context that matters today, then move straight into the scorecard.</p><div class="setup-flow-chips"><span class="setup-flow-chip">1. Set the round</span><span class="setup-flow-chip">2. Add context</span><span class="setup-flow-chip">3. Enter the card</span></div></div><div class="round-setup-steps"><div class="setup-step-card"><div class="setup-step-head"><div><div class="section-kicker">Step 1</div><h3 class="setup-step-title">Set the round</h3></div><p class="setup-step-copy">Choose the course and essentials.</p></div><div class="setup-fields-grid setup-fields-grid-primary"><div><label class="field-label" for="courseMode">Course mode</label><select id="courseMode" class="tip-input"><option value="springhaven">Springhaven</option><option value="custom">Custom course</option><option value="saved">Saved course</option></select></div><div><label class="field-label" for="courseName">Course</label><input id="courseName" class="tip-input" type="text" value="Springhaven Club" /></div><div><label class="field-label" for="teeSelect">Tee</label><select id="teeSelect" class="tip-input"></select></div><div><label class="field-label" for="savedCourseSelect">Saved course</label><select id="savedCourseSelect" class="tip-input" disabled><option value="">Select saved</option></select></div><div><label class="field-label" for="roundDate">Date</label><input id="roundDate" class="tip-input" type="date" /></div></div></div><div class="setup-step-card setup-step-card-secondary"><div class="setup-step-head"><div><div class="section-kicker">Step 2</div><h3 class="setup-step-title">Add context</h3></div><p class="setup-step-copy">Optional, but useful.</p></div><div class="setup-fields-grid setup-fields-grid-secondary"><div><label class="field-label" for="focusOfDay">Focus</label><input id="focusOfDay" class="tip-input" type="text" placeholder="Tempo, center green, fairways..." /></div><div><label class="field-label" for="roundNotes">Round note</label><input id="roundNotes" class="tip-input" type="text" placeholder="Windy, tight back nine, driver off..." /></div></div></div></div></div></section>
+        <section id="scorecardEntrySection" class="glass-card p-4 lg:p-5 overflow-hidden w-full"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5"><div><div class="section-kicker">18-Hole Input</div><h2 class="section-title">Scorecard shorthand</h2></div><div class="text-xs text-slate-400">Use <span class="text-slate-200 font-semibold">Y134</span>, <span class="text-slate-200 font-semibold">L125</span>, <span class="text-slate-200 font-semibold">LO155</span>, etc.</div></div><div class="entry-mode-panel md:hidden mb-4"><div class="section-kicker">Entry Mode</div><div class="entry-mode-toggle" id="entryModeBar"><button type="button" id="entryModeCardsBtn" class="entry-mode-btn active">Cards</button><button type="button" id="entryModeTableBtn" class="entry-mode-btn">Table</button></div><p class="entry-mode-copy">Cards are quickest on phone. Switch to Table for a full-card grid view.</p></div><div id="mobileEntryMount" class="mobile-entry-shell"></div><div id="scoreTableShell" class="overflow-x-auto rounded-2xl border border-white/10 table-scroll-shell table-scroll-mobile mt-4 md:mt-0"><table class="min-w-[1180px] w-full text-[13px] score-table"><thead><tr><th>Hole</th><th>Par</th><th>Yds</th><th>Score</th><th>Fairway</th><th>Green</th><th>Putts</th><th>U/D</th><th>S/S</th><th>Pen</th><th>Quick note</th></tr></thead><tbody id="roundTableBody"></tbody></table></div><div class="flex flex-wrap gap-3 mt-5" id="scorecardActionRow"><button id="analyzeBtn" class="tip-btn tip-btn-primary">Get Coaching</button><button id="loadDemoBtn2" class="tip-btn tip-btn-secondary hidden" aria-hidden="true">Load Demo Round</button><button id="clearBtn" class="tip-btn tip-btn-secondary">Clear Round</button><button id="saveRoundBtn" class="tip-btn tip-btn-secondary">Save Round to History</button><button id="saveCourseBtn" class="tip-btn tip-btn-secondary">Save as New Course</button></div></section>
         <section class="grid xl:grid-cols-2 gap-6 lg:gap-8 items-start"><div class="glass-card p-4 lg:p-5"><div class="flex items-end justify-between gap-3"><div><div class="section-kicker">Saved Courses</div><h2 class="section-title">Reuse your custom setups</h2></div><button id="refreshSavedCoursesBtn" class="tip-btn tip-btn-secondary">Refresh</button></div><div id="savedCoursesEmpty" class="text-sm text-slate-400 mt-4">No saved custom courses yet. Build one in Custom mode, then save it here.</div><div id="savedCoursesGrid" class="grid md:grid-cols-2 gap-4 mt-4"></div></div><div class="glass-card p-4 lg:p-5"><div class="flex items-end justify-between gap-3"><div><div class="section-kicker">Round History</div><h2 class="section-title">Recent cards</h2></div><button id="refreshHistoryBtn" class="tip-btn tip-btn-secondary">Refresh</button></div><div id="roundHistoryEmpty" class="text-sm text-slate-400 mt-4">No saved rounds yet. Analyze a round, then save it to history.</div><div id="roundHistoryList" class="space-y-3 mt-4"></div></div></section>
         <section id="roundSummarySection" class="glass-card p-4 lg:p-5"><div class="section-kicker">Round Summary</div><h2 class="section-title">Scoreboard</h2><div id="summaryCards" class="grid sm:grid-cols-2 xl:grid-cols-6 gap-4 mt-5"></div></section>
         <section class="grid xl:grid-cols-[1.05fr_.95fr] gap-6 lg:gap-8 items-start"><div class="glass-card p-5 lg:p-6"><div class="section-kicker">TIP Debrief</div><h2 class="section-title">What mattered most</h2><div class="one-thing-card mt-4"><div class="text-xs uppercase tracking-[0.2em] text-slate-400">The one thing</div><div id="oneThingFocus" class="mt-2 text-lg md:text-xl font-bold text-white">Analyze a round to surface the clearest next lever.</div><div id="oneThingSupport" class="mt-2 text-sm text-slate-400">TIP will pull one simple focus you can take straight into the next session.</div></div><div class="mt-5 space-y-5"><div><div class="text-xs uppercase tracking-[0.2em] text-slate-400">Round profile</div><div id="roundProfile" class="text-2xl font-bold mt-2">Awaiting analysis</div></div><div class="grid md:grid-cols-3 gap-4"><div class="debrief-card"><div class="debrief-title">What traveled</div><p id="whatTraveled" class="debrief-copy">Enter a round to generate the debrief.</p></div><div class="debrief-card"><div class="debrief-title">What cost shots</div><p id="whatCostShots" class="debrief-copy">The tool will identify the main leak on the card.</p></div><div class="debrief-card"><div class="debrief-title">What to train next</div><p id="whatTrainNext" class="debrief-copy">TIP will prescribe one clear next block of work.</p></div></div></div></div><div class="glass-card p-5 lg:p-6"><div class="section-kicker">Pattern Panels</div><h2 class="section-title">Where the round leaned</h2><div id="patternGrid" class="grid sm:grid-cols-2 gap-4 mt-5"></div></div></section>
@@ -120,25 +80,6 @@
       </div>
     </main>
   </div>
-
-  <div id="mobileStickyBar" class="mobile-sticky-bar hidden"><button id="analyzeStickyBtn" class="tip-btn tip-btn-primary">Analyze Round</button></div>
-  <div id="toast" class="toast hidden"></div>
-  <script src="./tip-drill-details.js"></script>
-  <script src="./tip-how-ui.js"></script>
-  <script src="./app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const startBtn = document.getElementById('startEntryBtn');
-      const workflow = document.getElementById('reviewWorkflow');
-      const entry = document.getElementById('scorecardEntrySection');
-      const showWorkflow = () => {
-        workflow?.classList.remove('hidden');
-        startBtn.textContent = 'Round Entry Open';
-        setTimeout(() => entry?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
-      };
-      startBtn?.addEventListener('click', showWorkflow);
-      if (window.location.hash === '#scorecardEntrySection') showWorkflow();
-    });
-  </script>
+  <div id="mobileStickyBar" class="mobile-sticky-bar hidden"><button id="analyzeStickyBtn" class="tip-btn tip-btn-primary">Analyze Round</button></div><div id="toast" class="toast hidden"></div><script src="./tip-drill-details.js"></script><script src="./tip-how-ui.js"></script><script src="./app.js"></script><script>document.addEventListener('DOMContentLoaded',()=>{const startBtn=document.getElementById('startEntryBtn');const workflow=document.getElementById('reviewWorkflow');const target=document.getElementById('howToEnterSection');const showWorkflow=()=>{workflow?.classList.remove('hidden');startBtn.textContent='Round Entry Open';setTimeout(()=>target?.scrollIntoView({behavior:'smooth',block:'start'}),120);};startBtn?.addEventListener('click',showWorkflow);if(window.location.hash==='#scorecardEntrySection'||window.location.hash==='#howToEnterSection')showWorkflow();});</script>
 </body>
 </html>
